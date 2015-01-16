@@ -1,0 +1,358 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/animation.css">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/title_logo.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+    <!-- <img src="images/coupa_logo.jpg" style="position: absolute; right: 20px; top: 20px; width: 200px;"> -->
+  </slide>
+
+
+  <slide class="without_box">
+    <hgroup>
+      <h2>Agenda</h2>
+    </hgroup>
+    <article class="slide-agenda" style="margin-left: 150px;">
+        <div class="item"  style="margin-bottom: 50px;">
+          <img src="images/title_logo.png" />
+          <span class="red_text">WAT?</span>
+        </div>
+        <div class="item"  style="margin-bottom: 50px;">
+          <img src="images/title_logo.png" />
+          <span class="green_text">Coupa on Faye</span>
+        </div>
+        <div class="item" style="margin-bottom: 50px;">
+          <img src="images/title_logo.png" />
+          <span class="yellow_text">More..</span>
+        </div>
+    </article>
+  </slide>
+
+
+  <slide class="segue linen nobackground">
+    <aside class="gdbar"><img src="images/title_logo.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>WAT?</h2>
+      <h3>&nbsp;</h3>
+    </hgroup>
+  </slide>
+
+
+  <slide class="segue linen quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/faye.jpg" style="width: 200px; height: 70px; padding-bottom: 5px;"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <q>
+      	<span class="white">Faye</span> is a set of tools for simple <span class="white">publish-subscribe</span> messaging between web clients</q>
+      <div class="author">
+        © Faye official site<br>
+      </div>
+    </article>
+  </slide>
+
+  <!-- <slide class="segue linen quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/faye.jpg" style="width: 200px; height: 70px; padding-bottom: 5px;"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <q>
+      	It ships with easy-to-use message routing servers for <span class="white">Node.js</span> and <span class="white">Rack applications</span>, and clients that can be used on the server and in the browser.
+      </q>
+      <div class="author">
+        © Faye official site<br>
+      </div>
+    </article>
+  </slide> -->
+
+
+  <slide>
+    <hgroup>
+      <h2>Faye: simple pub/sub messaging</h2>
+      <a href="http://faye.jcoglan.com">http://faye.jcoglan.com</a>
+    </hgroup>
+    <article>
+      <iframe data-src="http://faye.jcoglan.com"></iframe>
+    </article>
+  </slide>
+
+
+	
+
+  <slide class="without_box">
+  <hgroup>
+      <h2>Faye is</h2>
+    </hgroup>
+    <article style="margin-left:120px;">
+      <h2 class="white"> <span class="white mark_green">Publish</span>-<span class="white mark_red">subscribe</span> messaging system</h2>
+      <br><br>
+      <h2 class="white"> Based on the <span class="white mark_yellow">Bayeux</span> protocol </h2>
+      <br><br>
+      <h2 class="white">Servers/clients in <span class="white mark_red">Ruby</span> and <span class="white mark_green">Javascript</span></h2>
+    </article>
+  </slide>
+  
+
+  <slide>
+    <hgroup>
+      <h2>How?</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/faye-internals.png" class="reflect" style="max-height: 520px; ">
+    </article>
+  </slide>
+
+  <slide class="without_box">
+    <article>
+    <br>  <br>  <br>  
+      <h3 class="cool_title big green_text" style="font-size: 80px"> Server publishes <img src="images/arrow_down.png" style="height: 90px;"> to named channels</h3>
+    	<br>  <br>  
+      <h3 class="cool_title big red_text" style="font-size: 80px">Clients <img src="images/arrow_up.png" style="height: 90px;"> subscribe <img src="images/arrow_up.png" style="height: 90px;"> to channels</h3>
+    </article>
+  </slide>
+
+  <slide class="without_box">
+    <article>
+    <br>  <br> 
+      <h3 class="cool_title big green_text" style="font-size: 120px; margin-left: 190px"> Ruby <img src="images/arrow_down.png" style="height: 90px;"> on Rails</h3>
+      <h3 class="cool_title big red_text" style="font-size: 120px; margin-left: 150px"> <img src="images/arrow_up.png" style="height: 90px;"> JavaScript <img src="images/arrow_up.png" style="height: 90px;"> </h3>
+    </article>
+  </slide>
+
+
+  <slide class="without_box">
+    <article>
+      <h3 class="cool_title big green_text" style="font-size: 120px; margin-left: 190px"> Ruby <img src="images/arrow_down.png" style="height: 90px;"> on Rails</h3>
+      <h3 class="cool_title big orange_text" style="font-size: 80px; margin-left: 190px"> - C - H - A - N - N - E - L-</h3>
+      <h3 class="cool_title big red_text" style="font-size: 120px; margin-left: 150px"> <img src="images/arrow_up.png" style="height: 90px;"> JavaScript <img src="images/arrow_up.png" style="height: 90px;"> </h3>
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Bayeux?</h2>
+      <a href="http://docs.cometd.org/reference/bayeux.html">http://docs.cometd.org/reference/bayeux.html</a>
+    </hgroup>
+    <article>
+      <iframe data-src="http://docs.cometd.org/reference/bayeux.html"></iframe>
+    </article>
+  </slide>
+
+
+  <slide class="segue linen quote nobackground">
+    <hgroup>
+      <h2>Events</h2>
+    </hgroup>
+    <article class="flexbox vleft auto-fadein">
+        <h3 class="mark_green blue_text">handshake</h3>
+        <h3 class="mark_yellow blue_text">subscribe</h3>
+        <h3 class="mark_red blue_text">unsubscribe</h3>
+        <h3 class="mark_blue blue_text">publish</h3>
+        <h3 class="mark_purple blue_text">disconnect</h3>
+    </article>
+  </slide>
+
+
+
+
+
+  <slide class="segue linen nobackground">
+    <aside class="gdbar"><img src="images/title_logo.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Coupa on Faye</h2>
+      <h3>&nbsp;</h3>
+    </hgroup>
+  </slide>
+
+
+
+  <slide>
+    <hgroup>
+      <h2>How to run</h2>
+    </hgroup>
+    <article>
+      Procfile
+      <pre class="prettyprint shadow" data-lang="ruby">
+# faye message's server
+faye: rackup faye.ru -s thin -E production
+</pre>
+      <br><br>
+      Run
+<pre class="prettyprint shadow console" data-lang="ruby">
+➜  foreman start
+</pre>
+<br><br>
+Don't like foreman?
+<pre class="prettyprint shadow console" data-lang="ruby">
+➜  rackup faye.ru -s thin -E production
+</pre>
+     
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Server</h2>
+    </hgroup>
+    <article>
+			./app/controllers/quotes/supplier_messages_controller.rb
+      <pre class="prettyprint linenums shadow" data-lang="ruby">
+def create
+  @request = QuoteRequest.find params[:id]
+  # some magic goes here..
+  message = SupplierMessage.new( ... )
+
+  if message.save
+
+    <b>PushMessenger.push "/messages/#{@request.id}",
+      {
+        from:  message.created_by,
+        body:  message.body
+      }
+    </b>
+  end
+
+end
+</pre>
+     
+    </article>
+  </slide>
+
+
+
+  <slide>
+    <hgroup>
+      <h2>Client</h2>
+    </hgroup>
+    <article>
+			./public/javascripts/msgboard/controller.js
+      <pre class="prettyprint linenums shadow" data-lang="ruby">
+<b>subscribe('/messages/' + request.id, $.proxy(function(data) {</b>
+  
+  console.log(data);
+
+<b>}, this));</b>
+</pre>
+
+<br><br><br>
+
+<pre class="prettyprint shadow console" data-lang="ruby">
+[Log] Object (controller.js, line 34)
+          from: "Chuck Norris"
+          body: "Hey Coupa!"
+      __proto__: Object
+</pre>
+     
+    </article>
+  </slide>
+
+
+
+
+
+
+
+
+  <slide class="segue linen nobackground">
+    <aside class="gdbar"><img src="images/title_logo.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>More..</h2>
+      <h3>&nbsp;</h3>
+    </hgroup>
+  </slide>
+
+
+
+
+
+  <slide class="segue linen quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/title_logo.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      	➜  Faye Official Site <a href="http://faye.jcoglan.com">faye.jcoglan.com</a>
+      	<br><br>
+      	➜  Faye Railscast <a href="http://railscasts.com/episodes/260-messaging-with-faye">railscasts.com/episodes/260-messaging-with-faye</a>
+				<br><br>
+      	➜  Private Pub Railscast <a href="http://railscasts.com/episodes/316-private-pub">railscasts.com/episodes/316-private-pub</a>
+      	<br><br>
+
+      <div class="author">
+        © Internet
+      </div>
+    </article>
+  </slide>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/title_logo.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Thank You!&gt;</h2>
+      <!-- <p>Important contact information goes here.</p> -->
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+// var _gaq = _gaq || [];
+// _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+// _gaq.push(['_trackPageview']);
+
+// (function() {
+//   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+//   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+//   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+// })();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
